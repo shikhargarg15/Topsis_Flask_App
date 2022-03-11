@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPSIS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css" integrity="sha512-bSncow0ApIhONbz+pNI52n0trz5fMWbgteHsonaPk42JbunIeM9ee+zTYAUP1eLPky5wP0XZ7MSLAPxKkwnlzw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary justify-content-center">
+        <h2>TOPSIS</h2>
+    </nav>
+
+    <main>
+        <div class="jumbotron">
+            <h3 class="display-5">What is TOPSIS?</h1>
+            <p class="lead">Technique for Order of Preference by Similarity to Ideal Solution(TOPSIS) is a multi-criteria decision analysis method. It is a method of compensatory aggregation that compares a set of alternatives by identifying weights for each criterion, normalising scores for each criterion and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each criterion.</p>
+        </div>    
+       
+        <div class="container">
+            {% if error %}
+                <h4 class="text-danger">{{message}}</h4>
+                <a class="btn btn-dark" href="/">Go To Home</a>
+            {% else %}
+                <div class="row {% if output %} justify-content-between {% else %} justify-content-center {% endif %}">
+                    <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                        {% if output %}
+                            <h4>Result for {{filename}}</h4>
+                            <h5>Impacts : {{impacts}}</h5>
+                            <h5>Weights : {{weights}}</h5>
+                        {% else %}
+                            <form action="/" method="POST" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                <label for="InputFilea" class="form-label">Select a File : </label>
+                                <input type="file" class="form-control" name="InputFile" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="InputImpact" class="form-label">Impacts : </label>
+                                    <input type="text" class="form-control" name="InputImpact" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="InputWeight" class="form-label">Weights : </label>
+                                    <input type="text" class="form-control" name="InputWeight" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    
+                    {% if output %}
+                        <div class="col-sm-12 col-md-6 my-3">
+                            <table class="table table-striped">
+                                <tr>
+                                    {% for header in headings %}
+                                    <th>{{ header }}</th>
+                                    {% endfor %}
+                                </tr>
+                                {% for row in data %}
+                                <tr>
+                                    {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer class="bg-dark p-3 text-center mt-3">
+        <p class="lead">Made By : SHIKHAR GARG</p>
+        <p class="m-0 p-0">
+            <a href="https://github.com/shikhargarg15" target="__blank" style="text-decoration: none; color: white;">
+                <span class="fa-brands fa-github" style="font-size: 20px; margin-right: 20px;"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/shikhar-garg-142107207/" target="__blank" style="text-decoration: none; color: #0077b5;">
+                <span class="fa-brands fa-linkedin" style="font-size: 20px; margin-right: 20px;"></span>
+            </a>
+        </p>
+    </footer>
+    
+</body>
+</html>
