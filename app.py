@@ -1,19 +1,17 @@
 # importing Flask and other modules
-from flask import Flask, request, render_template, redirect, url_for
+import os
+
+from flask import Flask, request, render_template
 from Topsis_Shikhar_101917064 import topsis
 from werkzeug.utils import secure_filename
 import pandas as pd
-import os
-from dotenv import load_dotenv
 
 # Flask constructor
 app = Flask(__name__)
 
-load_dotenv(".env")
 ALLOWED_EXTENSIONS = {'csv'}
 UPLOAD_FOLDER = './static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.debug = True
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -51,4 +49,4 @@ def upload_file():
 	return render_template("f1.html", output = False)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
