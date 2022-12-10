@@ -22,6 +22,7 @@ M4 |	0.82 | 0.67	| 2.68 | 70.19
 M5 |	0.75 | 0.56	| 1.3	 | 80.39
 
 It then takes comma-separated impacts for each feature with (+) denoting the positive impact and (-) denoting the negative impact.
+
 It then takes comma-separated weights for each feature.
 
 ## Output
