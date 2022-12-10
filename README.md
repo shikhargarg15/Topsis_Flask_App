@@ -1,7 +1,7 @@
 # TOPSIS Web App for Multiple-Criteria Decision Making
 Project By: **Shikhar Garg**
 
-[Click here]http://sgarg8.pythonanywhere.com/) to view the site.
+[Click here](http://sgarg8.pythonanywhere.com/) to view the site.
 
 #Introduction
 
