@@ -28,13 +28,13 @@ It then takes comma-separated weights for each feature.
 ## Output
 
 ```
-Model   Topsis Score    Rank
------  --------  ----
-  M1    0.772      2
-  M2    0.225      5
-  M3    0.438      4
-  M4    0.523      3
-  M5    0.811      1
+Model   Topsis Score   Rank
+-----  --------        ----
+  M1    0.772           2
+  M2    0.225           5
+  M3    0.438           4
+  M4    0.523           3
+  M5    0.811           1
 ```
 
 The rankings are displayed in this form, with the 1st rank offering us the best decision, and last rank offering the worst decision making, according to TOPSIS method.
