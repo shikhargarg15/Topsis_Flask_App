@@ -37,7 +37,7 @@ Model   Topsis Score   Rank
   M5    0.811           1
 ```
 
-The rankings are displayed in this form, with the 1st rank offering us the best decision, and last rank offering the worst decision making, according to TOPSIS method.
+The rankings are displayed in this form, with the 1st rank(given to highest topsis score) offering us the best decision, and last rank offering the worst decision making, according to TOPSIS method.
  
 # Tools & Technologies Used
 * Python
